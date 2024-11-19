@@ -1,0 +1,46 @@
+﻿@model IMS.Models.Entities.Login
+
+@{
+    ViewData["Title"] = "User Login Page";
+}
+
+
+<html>
+<head>
+    <link href="~/css/user-login.css" rel="stylesheet" />
+</head>
+
+<body class="user-login-page-wrapper">
+    <div class="user-login-page-container">
+        <div class="header-section">
+            <img src="https://www.tuicms.edu.np/themes-assets/img/logo-round.jpg" />
+
+            <h2>User Login Form</h2>
+        </div>
+
+        <form action="Login" method="POST">
+            <div class="input-field">
+                <label for="email">Email </label>
+
+                <input type="email" name="Email" value="@Model?.Email" required />
+                @Html.ValidationMessageFor(model => model.Email)
+            </div>
+
+            <div class="input-field">
+                <label for="password">Password </label>
+
+                <input type="password" name="Password" value="@Model?.Password" required />
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+
+            <div class="button-field">
+                <input type="submit" value="Login" />
+            </div>
+
+            <footer>
+                <p>Don't Have an account ?<span> <a href="register">Register</a></span> </p
+            </footer>
+        </form>
+    </div>
+</body>
+</html>

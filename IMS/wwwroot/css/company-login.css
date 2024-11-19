@@ -1,5 +1,6 @@
 .company-login-page-wrapper {
-  background-color: #e6ede8;
+    background-color: #e6ede8;
+}
 
   .company-login-page-container {
     margin-top: 5rem;
@@ -10,6 +11,7 @@
     align-items: center;
     gap: 1rem;
   }
+
   .header-section {
     width: 60%;
     display: flex;
