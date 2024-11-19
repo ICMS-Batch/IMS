@@ -3,15 +3,16 @@ using Microsoft.EntityFrameworkCore;
 using IMS.Models.Entities;
 namespace IMS.Data
 {
-	public class ApplicationDbContext: DbContext
-	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
-		{
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
 
-		}
+        }
         public DbSet<User> Users { get; set; }
+        public DbSet<Company> Companies { get; set; }
     }
 
-	
+
 }
 
