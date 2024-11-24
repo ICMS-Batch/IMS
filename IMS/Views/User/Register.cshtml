@@ -1,0 +1,86 @@
+﻿@model IMS.Models.Entities.User
+
+@{
+    ViewData["Title"] = "User Register Page";
+}
+<html>
+<head>
+    <link href="~/css/user-register.css" rel="stylesheet" />
+</head>
+
+<body class="user-register-page-wrapper">
+    <div class="user-register-page-container">
+        <div class="header-section">
+            <img src="https://www.tuicms.edu.np/themes-assets/img/logo-round.jpg" />
+            <h2>User Register Form</h2>
+        </div>
+
+        <form action="register" method="POST">
+            <div class="row-div1">
+                <div class="input-field">
+                    <label for="name">Name </label>
+
+                    <input type="text" name="name" value="@Model?.Name" required />
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+
+                <div class="input-field">
+                    <label for="username">Username </label>
+
+                    <input type="text" name="username" value="@Model?.UserName" required />
+                    @Html.ValidationMessageFor(model => model.UserName)
+                </div>
+            </div>
+
+            <div class="row-div1">
+                <div class="input-field">
+                    <label for="email">Email </label>
+                    <input type="email" name="email" value="@Model?.Email" required />
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div class="input-field">
+                    <label for="address">Address </label>
+                    <input type="text" name="address" value="@Model?.Address" required />
+                    @Html.ValidationMessageFor(model => model.Address)
+                </div>
+            </div>
+
+            <div class="row-div1">
+                <div class="input-field">
+                    <label for="phone">Phone </label>
+
+                    <input type="number" name="phone" value="@Model?.PhoneNumber" required />
+                    @Html.ValidationMessageFor(model => model.PhoneNumber)
+                </div>
+
+                <div class="input-field">
+                    <label for="company">Company </label>
+                    <input type="text" name="company" value="@Model?.Company" required />
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+
+            <div class="row-div1">
+
+                <div class="input-field">
+                    <label for="password">Password </label>
+                    <input type="password" name="password" value="@Model?.Company" required />
+                    @Html.ValidationMessageFor(model => model.Password)
+                </div>
+            </div>
+
+
+            <div class="button-field">
+                <input type="submit" value="Register" />
+            </div>
+
+            <footer>
+                <p>Already Have an account ?<span> <a href="login">Login</a></span></p>
+
+            </footer>
+        </form>
+    </div>
+    <!-- <p>Stored Value: @ViewBag.StoredValue</p> -->
+</body>
+</html>
